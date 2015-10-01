@@ -1,3 +1,6 @@
+//import ddf.minim.*;
+//Minim minim;
+//AudioSample sound;
 int raindropx=(int)random(1000);
 int raindropy=100;
 int score= 0;
@@ -10,11 +13,15 @@ void setup() {
   size (1000, 1000);
   backgroundImage = loadImage("Cloudy Background.png");
    image(backgroundImage,0,0);
-   
+   //minim = new Minim (this);
+   //sound = minim.loadSample("BD.wav", 128);
 }
 
 void draw () {
+  if raindropx=1000; {
+    sound.trigger();  }
   if (score>=5) {
+    
    
     
     fill(119, 255, 34);
