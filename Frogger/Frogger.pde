@@ -5,8 +5,8 @@ void setup(){
 
 int hopX = 200;
 int hopY = 380;
-  Car car = new Car(300, 100,30 , 15);
-  Car car2 = new Car(200, 30,30 , 10);
+  Car car = new Car(300, 100,30 , 10);
+  Car car2 = new Car(200, 30,30 , 7);
   Car car3 = new Car(50, 200,30 , 6);
   Car car4 = new Car(350, 300,30 , 4);
   Car car5 = new Car(100, 320,30 , 2);
@@ -31,8 +31,16 @@ void draw(){
   car3.intersects(car3);
   car4.intersects(car4);
   car5.intersects(car5);
-
-
+  
+  if(hopY <= 0){
+    text("Congrats!", 100, 200);
+    textSize(40);
+  }
+  else 
+  {
+    text("Frogger", 130,200);
+    textSize(40);
+  }
 } 
 
 void keyPressed(){
@@ -101,12 +109,15 @@ public class Car{
   boolean intersects(Car car){
     if ((hopY > car.getY() && hopY < car.getY()+50) && (hopX > car.getX() && hopX < car.getX()+car.getSize())){
           hopY = 398;
+          
           return true;
     }
     else {
+        
         return false;
     
   }
+  
   }
  void moveLeft(){
    this.carX-= this.carSpeed;
@@ -133,4 +144,5 @@ public class Car{
     
   
   }
+  
 }
